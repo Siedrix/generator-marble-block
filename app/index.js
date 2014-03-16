@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var hat = require('hat');
 
 
 var MarbleBlockGenerator = module.exports = function MarbleBlockGenerator(args, options, config) {
@@ -28,7 +29,8 @@ MarbleBlockGenerator.prototype.askFor = function askFor() {
 	}];
 
 	this.prompt(prompts, function (props) {
-		this.projectName = props.projectName;
+		this.projectName     = props.projectName;
+		this.redisProdSecret = hat(Math.pow(2, 8));
 
 		cb();
 	}.bind(this));

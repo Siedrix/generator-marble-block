@@ -1,1 +1,6 @@
-{}
+{
+	"redis" : {
+		"secret" : "something secret",
+		"options" : {}
+	}	
+}

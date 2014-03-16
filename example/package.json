@@ -1,8 +1,10 @@
 {
-	"name": "example-block",
-	"version": "0.0.1",
-	"dependencies": {
-		"express.io": "~1.1.13"
-	},
-	"devDependencies": {}
+  "name": "example-block",
+  "version": "0.0.2",
+  "dependencies": {
+    "express.io": "~1.1.13",
+    "connect-redis": "~1.4.7",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {}
 }

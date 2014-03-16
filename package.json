@@ -1,7 +1,7 @@
 {
   "name": "generator-marble-block",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.0.2",
+  "description": "A Express MVC, mongodb project",
   "keywords": [
     "yeoman-generator"
   ],
@@ -21,7 +21,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.0"
+    "yeoman-generator": "~0.13.0",
+    "hat": "0.0.3"
   },
   "devDependencies": {
     "mocha": "~1.12.0"

@@ -1,1 +1,6 @@
-{}
+{
+	"redis" : {
+		"secret" : "<%= _.slugify(redisProdSecret) %>",
+		"options" : {}
+	}	
+}

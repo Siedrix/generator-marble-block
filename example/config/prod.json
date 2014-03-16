@@ -1,1 +1,6 @@
-{}
+{
+	"redis" : {
+		"secret" : "$2a$10$bmqAOfXBlGYdR5z/L5Wcseu/U34VBK5bCr7jQTmhJHuwotClQJw9m",
+		"options" : {}
+	}	
+}
