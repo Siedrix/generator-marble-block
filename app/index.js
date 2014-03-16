@@ -46,4 +46,12 @@ MarbleBlockGenerator.prototype.app = function app() {
 	this.copy('config/_dev.json',  'config/dev.json');
 	this.copy('config/_prod.json', 'config/prod.json');
 	this.copy('config/_test.json', 'config/test.json');
+
+	// Views files
+	this.mkdir('views');
+	this.mkdir('views/layouts');
+	this.mkdir('views/home');
+	this.copy('views/_helpers.js',  'views/helpers.js');
+	this.copy('views/layouts/_main.html',  'views/layouts/main.html');
+	this.copy('views/home/_index.html',  'views/home/index.html');
 };
