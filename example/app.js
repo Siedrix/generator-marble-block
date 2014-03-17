@@ -9,6 +9,9 @@ console.log('Running app.js in', conf.env, 'environment');
 
 var app = express();
 
+// Static assets
+app.use(express.static('./public'));
+
 // Template engine
 var swigHelpers = require('./views/helpers');
 swigHelpers(swig);
@@ -56,4 +59,4 @@ app.get('/session', function (req, res) {
 	res.send(req.session);
 });
 
-app.listen(3000);
+app.listen(3005);

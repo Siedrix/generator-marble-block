@@ -54,4 +54,17 @@ MarbleBlockGenerator.prototype.app = function app() {
 	this.copy('views/_helpers.js',  'views/helpers.js');
 	this.copy('views/layouts/_main.html',  'views/layouts/main.html');
 	this.copy('views/home/_index.html',  'views/home/index.html');
+
+	// Public assets
+	this.mkdir('public');
+	this.mkdir('public/css');
+	this.mkdir('public/css/vendors');
+	this.mkdir('public/stylus');
+	this.mkdir('public/imgs');
+	this.mkdir('public/fonts');
+	this.mkdir('public/js');
+	this.copy('public/css/vendors/bootstrap.css',  'public/css/vendors/bootstrap.css');
+	this.directory('public/fonts/font-awesome',  'public/fonts/font-awesome');
+	this.directory('public/js/vendors',  'public/js/vendors');
+	this.copy('public/stylus/_main.styl',  'public/stylus/main.styl');
 };

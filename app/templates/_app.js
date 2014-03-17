@@ -9,6 +9,9 @@ console.log('Running app.js in', conf.env, 'environment');
 
 var app = express();
 
+// Static assets
+app.use(express.static('./public'));
+
 // Template engine
 var swigHelpers = require('./views/helpers');
 swigHelpers(swig);
