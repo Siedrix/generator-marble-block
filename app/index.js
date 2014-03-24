@@ -67,4 +67,8 @@ MarbleBlockGenerator.prototype.app = function app() {
 	this.directory('public/fonts/font-awesome',  'public/fonts/font-awesome');
 	this.directory('public/js/vendors',  'public/js/vendors');
 	this.copy('public/stylus/_main.styl',  'public/stylus/main.styl');
+
+	// Grunt
+	this.copy('_Gruntfile.js',  'Gruntfile.js');
+	
 };
