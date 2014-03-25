@@ -65,8 +65,6 @@ app.get('/', function (req, res) {
 	res.render('home/index');
 });
 
-// Connections
-
 // Controllers
 var loginController = require('./controllers/login');
 var appController = require('./controllers/app');

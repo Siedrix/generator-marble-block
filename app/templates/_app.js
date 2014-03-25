@@ -1,13 +1,19 @@
 'use strict';
-var express = require('express.io'),
-	_       = require('underscore'),
-	swig    = require('swig');
+var express  = require('express.io'),
+	// _        = require('underscore'),
+	swig     = require('swig'),
+	passport = require('passport'),
+	flash = require('connect-flash');
 
 // Load conf
 var conf = require('./conf');
 console.log('Running app.js in', conf.env, 'environment');
 
 var app = express();
+
+// Connects with db and load models
+var db = require('./lib/db');
+db.loadModels(['user']);
 
 // Static assets
 app.use(express.static('./public'));
@@ -41,22 +47,29 @@ app.configure(function () {
 		store: new RedisStore(conf.redis.options),
 		secret: conf.redis.secret
 	}));
+
+	app.use(passport.initialize());
+	app.use(passport.session());
+	app.use(flash());
+});
+
+passport.serializeUser(function (user, done) {
+	done(null, user);
+});
+
+passport.deserializeUser(function (obj, done) {
+	done(null, obj);
 });
 
 app.get('/', function (req, res) {
 	res.render('home/index');
 });
 
-app.get('/env', function (req, res) {
-	res.send(conf.env);
-});
+// Controllers
+var loginController = require('./controllers/login');
+var appController = require('./controllers/app');
 
-app.get('/session', function (req, res) {
-	_.each(req.query, function (item, key) {
-		req.session[key] = item;
-	});
-
-	res.send(req.session);
-});
+loginController(app);
+appController(app);
 
 app.listen(3000);

@@ -51,22 +51,27 @@ MarbleBlockGenerator.prototype.app = function app() {
 	this.mkdir('views');
 	this.mkdir('views/layouts');
 	this.mkdir('views/home');
+	this.mkdir('views/login');
+	this.mkdir('views/app');
 	this.copy('views/_helpers.js',  'views/helpers.js');
 	this.copy('views/layouts/_main.html',  'views/layouts/main.html');
+	this.copy('views/layouts/_app.html',  'views/layouts/app.html');
 	this.copy('views/home/_index.html',  'views/home/index.html');
+	this.copy('views/app/_index.html',  'views/app/index.html');
+	this.copy('views/login/_login.html',  'views/login/login.html');
+	this.copy('views/login/_signup.html',  'views/login/signup.html');
 
 	// Public assets
-	this.mkdir('public');
-	this.mkdir('public/css');
-	this.mkdir('public/css/vendors');
-	this.mkdir('public/stylus');
-	this.mkdir('public/imgs');
-	this.mkdir('public/fonts');
-	this.mkdir('public/js');
-	this.copy('public/css/vendors/bootstrap.css',  'public/css/vendors/bootstrap.css');
-	this.directory('public/fonts/font-awesome',  'public/fonts/font-awesome');
-	this.directory('public/js/vendors',  'public/js/vendors');
-	this.copy('public/stylus/_main.styl',  'public/stylus/main.styl');
+	this.directory('public/',  'public/');
+
+	// Controllers
+	this.directory('controllers/',  'controllers/');
+
+	// Lib
+	this.directory('lib/',  'lib/');
+
+	// Models
+	this.directory('models/',  'models/');
 
 	// Grunt
 	this.copy('_Gruntfile.js',  'Gruntfile.js');

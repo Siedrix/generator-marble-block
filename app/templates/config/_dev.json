@@ -2,5 +2,8 @@
 	"redis" : {
 		"secret" : "something secret",
 		"options" : {}
-	}	
+	},
+	"mongo" : {
+		"db" : "<%= _.camelize(projectName) %>"
+	}
 }

@@ -2,5 +2,8 @@
 	"redis" : {
 		"secret" : "<%= _.slugify(redisProdSecret) %>",
 		"options" : {}
+	},
+	"mongo" : {
+		"db" : "<%= _.camelize(projectName) %>Production"
 	}	
 }
